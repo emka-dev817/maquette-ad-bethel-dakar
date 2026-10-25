@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Maquette de proposition d'E'Markete Agency pour l'Église AD Béthel de Dakar : nouveau site, page d'offrandes avec Wave et Orange Money, reçu automatique et tableau de suivi.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Proposition : un site et une page d'offrandes pour l'Église AD Béthel de Dakar">
+<meta property="og:description" content="Maquette proposée par Travis Guibinga, E'Markete Agency. Wave, Orange Money et Yas intégrés, reçu automatique sur WhatsApp, tableau de suivi pour l'équipe.">
+<meta property="og:image" content="https://emka-dev817.github.io/maquette-ad-bethel-dakar/apercu.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="750">
+<meta property="og:url" content="https://emka-dev817.github.io/maquette-ad-bethel-dakar/">
+<meta name="twitter:card" content="summary_large_image">
+<title>Proposition AD Béthel de Dakar, E'Markete Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bleu:#1A3970;        /* bleu du logo de Béthel */
+  --bleu-2:#24498C;
+  --nuit:#0F2347;
+  --or:#E9A53A;          /* flamme */
+  --or-clair:#FBE3B5;
+  --encre:#111A2E;
+  --brume:#EDF0F5;
+  --blanc:#FFFFFF;
+  --gris:#5B6476;
+  --trait:#DCE2EC;
+  --vert:#1E8A55;
+  --display:"Lexend",system-ui,sans-serif;
+  --texte:"Source Sans 3",system-ui,sans-serif;
+  /* bande : silhouette de vagues et de flammes, motif original */
+  --bande:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='18' viewBox='0 0 60 18'%3E%3Crect width='60' height='18' fill='%231A3970'/%3E%3Crect y='0' width='60' height='2' fill='%23E9A53A'/%3E%3Crect y='16' width='60' height='2' fill='%23E9A53A'/%3E%3Cpath d='M0 12 Q7.5 5 15 12 T30 12 T45 12 T60 12' stroke='%23FBE3B5' stroke-width='1.6' fill='none'/%3E%3Cpath d='M15 9c0-2 1.6-3 1.6-5 1.2 1.3 1.8 2.6 1.8 4 0 1.3-.8 2.2-1.7 2.2S15 9.9 15 9z' fill='%23E9A53A'/%3E%3Cpath d='M45 9c0-2 1.6-3 1.6-5 1.2 1.3 1.8 2.6 1.8 4 0 1.3-.8 2.2-1.7 2.2S45 9.9 45 9z' fill='%23E9A53A'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--brume);color:var(--encre);font-family:var(--texte);-webkit-font-smoothing:antialiased}
+.presentation{max-width:1560px;margin:0 auto;padding:56px 60px 80px}
+.pres-tete{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:44px}
+.pres-tete .g{display:flex;gap:22px;align-items:center}
+.pres-tete .g img{width:92px;height:92px}
+.pres-tete h1{font-family:var(--display);font-weight:800;font-size:46px;line-height:1.05;letter-spacing:-.5px;color:var(--bleu)}
+.pres-tete p{font-size:18px;color:var(--gris);max-width:640px;line-height:1.5;margin-top:12px}
+.signature{font-size:15px;color:var(--gris);text-align:right;line-height:1.6}
+.signature strong{color:var(--encre)}
+.planche{margin-top:64px}
+.planche-titre{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}
+.planche-titre .n{font-family:var(--display);font-weight:800;font-size:19px;color:var(--or);background:var(--bleu);width:36px;height:36px;border-radius:50%;display:grid;place-items:center;flex:none}
+.planche-titre h2{font-family:var(--display);font-weight:700;font-size:27px;color:var(--encre)}
+.planche-titre span{color:var(--gris);font-size:15px}
+.agrandir{margin-left:auto;font-size:14px;font-weight:700;color:var(--bleu);text-decoration:none;background:#fff;border-radius:999px;padding:7px 14px;box-shadow:0 0 0 1px var(--trait)}
+.ecran{background:var(--blanc);border-radius:18px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(15,35,71,.4),0 0 0 1px rgba(15,35,71,.06)}
+.cadre{width:100%;overflow:hidden;position:relative}
+.cadre>*{transform-origin:top left}
+
+/* ---------- site desktop ---------- */
+.site{width:1440px}
+.nav{background:#fff;border-bottom:1px solid var(--trait);display:flex;align-items:center;justify-content:space-between;padding:14px 64px}
+.marque{display:flex;align-items:center;gap:14px}
+.marque img{width:56px;height:56px}
+.marque b{display:block;font-family:var(--display);font-weight:700;font-size:19px;color:var(--bleu);line-height:1.15}
+.marque small{font-size:13px;color:var(--gris)}
+.nav ul{display:flex;gap:30px;list-style:none;font-size:16px;color:#4A5367}
+.nav li.actif{color:var(--bleu);font-weight:700;position:relative}
+.nav li.actif:after{content:"";position:absolute;left:0;right:0;bottom:-26px;height:3px;border-radius:3px;background:var(--or)}
+.btn{font-family:var(--texte);font-weight:700;font-size:16px;border-radius:999px;padding:14px 26px;border:0;display:inline-flex;align-items:center;gap:10px;white-space:nowrap}
+.btn svg{flex:none}
+.btn-or{background:var(--or);color:var(--nuit)}
+.btn-bleu{background:var(--bleu);color:#fff}
+.btn-ligne{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.5)}
+.btn-clair{background:#fff;color:var(--encre);box-shadow:0 0 0 1px var(--trait)}
+.hero{background:radial-gradient(900px 520px at 78% 40%,#2C5AA8 0%,var(--bleu-2) 30%,var(--bleu) 62%,var(--nuit) 100%);color:#fff;padding:70px 64px 0;display:grid;grid-template-columns:1fr 540px;gap:40px;min-height:620px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-120px;top:-160px;width:620px;height:620px;border-radius:50%;border:1px solid rgba(233,165,58,.2);box-shadow:0 0 0 70px rgba(233,165,58,.045),0 0 0 140px rgba(233,165,58,.03)}
+.hero-texte{position:relative;padding-top:20px;padding-bottom:70px}
+.surtitre{color:var(--or);font-weight:700;font-size:17px;margin-bottom:18px;display:flex;align-items:center;gap:10px;letter-spacing:.3px}
+.surtitre:before{content:"";width:28px;height:2px;background:var(--or)}
+.hero h1{font-family:var(--display);font-weight:800;font-size:70px;line-height:1.02;letter-spacing:-1.2px;max-width:660px}
+.hero p.chapo{font-size:21px;line-height:1.55;color:rgba(255,255,255,.84);max-width:560px;margin:26px 0 34px}
+.actions{display:flex;gap:14px;flex-wrap:wrap}
+.moyens{margin-top:44px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.moyens span.l{font-size:15px;color:rgba(255,255,255,.7);margin-right:4px}
+.pastille{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:7px 14px 7px 7px;font-size:14.5px;font-weight:600}
+.pastille i{width:22px;height:22px;border-radius:50%;display:inline-block}
+.wave{background:#1DC8F2}.om{background:#FF7900}.yas{background:#7A2FB6}.carte{background:linear-gradient(135deg,#2B2B2B,#6B6B6B)}
+.hero-visuel{position:relative;align-self:end}
+.bande{height:18px;background:var(--bande);background-size:60px 18px}
+
+/* carte direct (accueil) */
+.direct{position:relative;margin:10px 0 70px;background:#0B1730;border-radius:22px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+.direct .img{height:300px;background:radial-gradient(420px 220px at 30% 40%,rgba(233,165,58,.55),transparent 70%),radial-gradient(380px 260px at 80% 70%,rgba(44,90,168,.9),transparent 70%),linear-gradient(135deg,#132A55,#0B1730);position:relative;display:grid;place-items:center}
+.direct .img .lect{width:84px;height:84px;border-radius:50%;background:rgba(255,255,255,.95);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.direct .badge{position:absolute;left:18px;top:18px;background:#D92D2D;color:#fff;font-weight:700;font-size:13px;letter-spacing:.8px;border-radius:8px;padding:6px 10px;display:flex;gap:7px;align-items:center}
+.direct .badge i{width:8px;height:8px;border-radius:50%;background:#fff}
+.direct .txt{padding:20px 22px 22px;color:#fff}
+.direct .txt small{color:var(--or);font-weight:700;font-size:13.5px;letter-spacing:.5px}
+.direct .txt b{display:block;font-family:var(--display);font-size:22px;margin-top:6px;line-height:1.25}
+.direct .txt span{display:block;color:rgba(255,255,255,.7);font-size:15px;margin-top:6px}
+.vision{position:relative;left:-70px;margin-bottom:-26px;background:#fff;color:var(--encre);border-radius:18px;padding:16px 18px;width:310px;box-shadow:0 24px 50px -20px rgba(0,0,0,.5);z-index:3}
+.vision small{font-size:12.5px;font-weight:700;color:var(--or);letter-spacing:.6px}
+.vision b{display:block;font-family:var(--display);font-size:17px;line-height:1.3;margin-top:4px;color:var(--bleu)}
+
+.suite{padding:64px 64px 60px;background:#fff}
+.suite h2{font-family:var(--display);font-weight:800;font-size:40px;color:var(--encre);letter-spacing:-.4px}
+.suite .sous{color:var(--gris);font-size:18px;margin-top:8px}
+.cultes{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:20px;margin-top:32px}
+.culte{border:1px solid var(--trait);border-radius:22px;padding:26px 28px;display:flex;flex-direction:column;gap:10px}
+.culte .jour{font-family:var(--display);font-weight:700;font-size:24px}
+.culte .h{display:flex;gap:10px;flex-wrap:wrap}
+.culte .h span{font-family:var(--display);font-weight:700;font-size:19px;background:var(--brume);color:var(--bleu);border-radius:12px;padding:8px 14px}
+.culte p{color:var(--gris);font-size:16px;line-height:1.5}
+.culte.phare{background:var(--bleu);color:#fff;border:0;position:relative;overflow:hidden;padding-bottom:40px}
+.culte.phare p{color:rgba(255,255,255,.78)}
+.culte.phare .h span{background:rgba(255,255,255,.12);color:#fff}
+.culte.phare:after{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:var(--bande);background-size:46px 14px}
+.acompleter{display:inline-block;font-size:13px;font-weight:700;color:#7A5200;background:#FFF0C2;border-radius:999px;padding:4px 10px;margin-left:6px;vertical-align:middle;font-family:var(--texte)}
+.duo-blocs{display:grid;grid-template-columns:1.25fr 1fr;gap:20px;margin-top:20px}
+.message{display:grid;grid-template-columns:260px 1fr;gap:22px;align-items:center;background:var(--brume);border-radius:22px;padding:20px}
+.message .vign{height:150px;border-radius:16px;background:radial-gradient(200px 120px at 30% 40%,rgba(233,165,58,.6),transparent 70%),linear-gradient(135deg,#24498C,#0F2347);display:grid;place-items:center}
+.message small{font-size:13px;font-weight:700;color:var(--or);letter-spacing:.6px}
+.message b{display:block;font-family:var(--display);font-size:21px;line-height:1.3;margin:6px 0}
+.message span{color:var(--gris);font-size:15px}
+.depts{background:#fff;border:1px solid var(--trait);border-radius:22px;padding:22px 24px}
+.depts h3{font-family:var(--display);font-size:20px;margin-bottom:12px}
+.depts div{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid #EEF1F6;font-size:16px}
+.depts div:last-child{border:0}
+.depts div b{font-weight:600}
+.depts div span{color:var(--gris);font-size:14px}
+.pied-site{background:var(--nuit);color:rgba(255,255,255,.8);padding:34px 64px;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:30px;font-size:15px;line-height:1.6}
+.pied-site b{color:#fff;font-family:var(--display);display:block;margin-bottom:6px;font-size:16px}
+
+/* ---------- offrandes ---------- */
+.objets{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:22px;margin-top:36px;align-items:stretch}
+.objet{border:1px solid var(--trait);border-radius:22px;padding:30px;display:flex;flex-direction:column;gap:12px}
+.objet h3{font-family:var(--display);font-weight:700;font-size:24px}
+.objet p{color:var(--gris);font-size:16.5px;line-height:1.55}
+.objet .lien{margin-top:auto;font-weight:700;color:var(--bleu);font-size:15.5px}
+.objet.phare{background:var(--bleu);color:#fff;border:0;position:relative;overflow:hidden;padding-bottom:42px}
+.objet.phare p{color:rgba(255,255,255,.8)}
+.objet.phare .lien{color:var(--or)}
+.objet.phare:after{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:var(--bande);background-size:46px 14px}
+.objet .ico{width:52px;height:52px;border-radius:16px;background:#E5ECF7;display:grid;place-items:center;color:var(--bleu)}
+.objet.phare .ico{background:rgba(233,165,58,.18);color:var(--or)}
+.jauge-o{margin-top:4px}
+.jauge-o .j{height:10px;border-radius:10px;background:rgba(255,255,255,.15);overflow:hidden}
+.jauge-o .j span{display:block;height:100%;width:62%;background:var(--or);border-radius:10px}
+.jauge-o small{display:block;font-size:13.5px;color:rgba(255,255,255,.72);margin-top:6px}
+.rdv{margin-top:26px;display:flex;align-items:center;justify-content:space-between;background:#FFF6E3;border-radius:22px;padding:22px 28px}
+.rdv .q{display:flex;gap:18px;align-items:center}
+.date{width:70px;text-align:center;background:#fff;border-radius:14px;padding:8px 0;box-shadow:0 0 0 1px var(--trait)}
+.date b{font-family:var(--display);font-size:26px;display:block;line-height:1;color:var(--bleu)}
+.date small{font-size:12px;color:var(--gris)}
+.rdv h4{font-family:var(--display);font-size:21px;font-weight:700}
+.rdv p{color:var(--gris);font-size:15.5px}
+.toast{position:absolute;left:-150px;top:150px;background:#fff;color:var(--encre);border-radius:18px;padding:16px 18px;width:300px;box-shadow:0 24px 50px -20px rgba(0,0,0,.45);display:flex;gap:12px;z-index:4}
+.toast .ic{width:38px;height:38px;border-radius:12px;background:#E9F8EF;display:grid;place-items:center;flex:none}
+.toast b{font-size:15px;display:block}
+.toast span{font-size:13.5px;color:var(--gris);line-height:1.4}
+
+/* ---------- téléphone ---------- */
+.tel{width:390px;height:844px;border-radius:54px;background:#0B1222;padding:12px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+.tel .ecr{width:100%;height:100%;border-radius:43px;overflow:hidden;background:#F7F9FC;position:relative;display:flex;flex-direction:column;color:var(--encre)}
+.statut,.app-tete,.etapes{flex:none}
+.tel .encoche{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:118px;height:32px;border-radius:20px;background:#0B1222;z-index:3}
+.statut{height:50px;display:flex;justify-content:space-between;align-items:flex-end;padding:0 30px 6px;font-size:14px;font-weight:700}
+.hero-visuel .tel{transform:translateY(120px);margin-left:80px}
+.flux{display:flex;gap:44px;align-items:flex-start;flex-wrap:wrap}
+.flux figure{display:flex;flex-direction:column;gap:16px;width:390px;max-width:100%}
+.flux figcaption{font-size:16px;color:var(--gris);max-width:390px;line-height:1.5}
+.flux figcaption b{color:var(--encre)}
+.app-tete{display:flex;align-items:center;justify-content:space-between;padding:10px 22px 6px}
+.app-tete h3{font-family:var(--display);font-weight:700;font-size:21px}
+.rond{width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 0 0 1px var(--trait)}
+.etapes{display:flex;gap:6px;padding:4px 22px 12px}
+.etapes i{height:4px;border-radius:4px;background:var(--trait);flex:1}
+.etapes i.ok{background:var(--or)}
+.corps{padding:0 22px;flex:1;display:flex;flex-direction:column}
+.lab{font-size:14px;font-weight:700;color:var(--gris);margin:11px 0 7px}
+.objets-m{display:flex;flex-direction:column;gap:7px}
+.choix{display:flex;align-items:center;gap:12px;background:#fff;border-radius:16px;padding:9px 14px;box-shadow:0 0 0 1px var(--trait)}
+.choix .pt{width:20px;height:20px;border-radius:50%;box-shadow:inset 0 0 0 2px #C3CBD8;flex:none}
+.choix.sel{box-shadow:0 0 0 2px var(--bleu);background:#F1F5FC}
+.choix.sel .pt{box-shadow:inset 0 0 0 6px var(--bleu)}
+.choix b{font-size:15.5px;display:block}
+.choix small{font-size:13px;color:var(--gris)}
+.choix .tag{margin-left:auto;font-size:11.5px;font-weight:700;background:#FFF0C2;color:#7A5200;border-radius:999px;padding:4px 9px;white-space:nowrap}
+.montant{background:var(--bleu);color:#fff;border-radius:22px;padding:16px 18px;margin-top:4px}
+.montant .devises{display:flex;gap:4px;background:rgba(255,255,255,.1);border-radius:999px;padding:3px;width:max-content;font-size:13px;font-weight:700}
+.montant .devises span{padding:5px 11px;border-radius:999px;color:rgba(255,255,255,.72)}
+.montant .devises span.on{background:var(--or);color:var(--nuit)}
+.montant .val{font-family:var(--display);font-weight:800;font-size:40px;letter-spacing:-.5px;margin:6px 0 0}
+.montant .val small{font-size:19px;color:var(--or);margin-left:6px}
+.montant .eq{font-size:13px;color:rgba(255,255,255,.7)}
+.puces{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:12px}
+.puces span{text-align:center;font-family:var(--display);font-weight:700;font-size:14.5px;padding:9px 0;border-radius:12px;background:rgba(255,255,255,.1)}
+.puces span.on{background:#fff;color:var(--bleu)}
+.cta-m{margin:auto 0 24px;padding-top:12px}
+.cta-m .btn{width:100%;justify-content:center;padding:17px;font-size:16.5px}
+.resume{display:flex;justify-content:space-between;align-items:center;background:#fff;border-radius:16px;padding:14px 16px;box-shadow:0 0 0 1px var(--trait)}
+.resume small{font-size:13px;color:var(--gris);display:block}
+.resume b{font-family:var(--display);font-size:23px}
+.resume a{font-size:13.5px;font-weight:700;color:var(--bleu)}
+.grille-moyens{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.moy{background:#fff;border-radius:16px;padding:10px 12px;box-shadow:0 0 0 1px var(--trait);display:grid;grid-template-columns:36px 1fr;column-gap:10px;align-items:center;position:relative}
+.moy .logo{grid-row:span 2;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:10.5px;font-family:var(--display)}
+.moy b{font-size:14px;white-space:nowrap}
+.moy small{font-size:12px;color:var(--gris)}
+.moy.sel{box-shadow:0 0 0 2px #1DC8F2;background:#EEFAFE}
+.moy.sel:after{content:"";position:absolute;right:-6px;top:-6px;box-shadow:0 0 0 3px #F7F9FC;width:20px;height:20px;border-radius:50%;background:#1DC8F2 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3 3 7-7' stroke='white' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.champ{background:#fff;border-radius:16px;padding:12px 14px;box-shadow:0 0 0 2px var(--encre);display:flex;align-items:center;gap:10px;font-size:17px;font-weight:600}
+.champ .ind{background:var(--brume);border-radius:9px;padding:6px 9px;font-size:14px}
+.aide{font-size:13px;color:var(--gris);line-height:1.45;margin-top:8px;display:flex;gap:8px}
+.aide svg{color:var(--bleu);flex:none}
+.securite{display:flex;align-items:center;gap:8px;justify-content:center;font-size:12.5px;color:var(--gris);margin-top:10px}
+.securite svg{color:var(--vert)}
+.merci{align-items:center;text-align:center}
+.sceau-ok{width:84px;height:84px;border-radius:50%;margin:18px auto 14px;background:radial-gradient(circle at 35% 30%,#F7C978,var(--or) 60%,#B97A16);display:grid;place-items:center;box-shadow:0 0 0 10px #FCEBC9,0 18px 30px -12px rgba(185,122,22,.7);color:var(--nuit)}
+.merci h3{font-family:var(--display);font-weight:800;font-size:28px;line-height:1.1}
+.merci p.m{color:var(--gris);font-size:15px;margin:8px 10px 0;line-height:1.5}
+.recu{margin-top:16px;background:#fff;border-radius:20px;box-shadow:0 0 0 1px var(--trait),0 18px 34px -24px rgba(15,35,71,.5);overflow:hidden;text-align:left;width:100%}
+.recu .bande{height:14px;background-size:46px 14px}
+.recu .entete{display:flex;justify-content:space-between;align-items:center;padding:12px 16px 6px}
+.recu .entete .re-g{display:flex;align-items:center;gap:10px}
+.recu .entete img{width:40px;height:40px}
+.recu .entete b{font-family:var(--display);font-size:15px;line-height:1.2;display:block}
+.recu .entete span{font-size:11.5px;color:var(--gris);white-space:nowrap;text-align:right}
+.lignes{padding:4px 16px 10px}
+.lignes div{display:flex;justify-content:space-between;font-size:14px;padding:7px 0;border-bottom:1px dashed var(--trait)}
+.lignes div:last-child{border:0}
+.lignes span{color:var(--gris)}
+.lignes .tot b{font-family:var(--display);font-size:19px;color:var(--bleu)}
+.envoye{display:flex;align-items:center;gap:8px;background:#E8F6EE;color:#14663E;font-size:13.5px;font-weight:700;border-radius:12px;padding:10px 12px;margin-top:12px;width:100%}
+.verset{font-size:13px;color:var(--gris);font-style:italic;margin-top:12px;line-height:1.45;padding:0 10px}
+.duo{display:flex;gap:8px;width:100%;margin:auto 0 26px;padding-top:12px}
+.duo .btn{flex:1;justify-content:center;padding:15px 10px;font-size:15px}
+
+/* ---------- tableau de bord ---------- */
+.dash{width:1440px;display:grid;grid-template-columns:250px 1fr;min-height:900px;background:#F6F8FB}
+.lateral{background:var(--nuit);color:#fff;padding:26px 20px;display:flex;flex-direction:column;gap:6px}
+.lateral .marque{margin-bottom:26px}
+.lateral .marque img{width:46px;height:46px;background:#fff;border-radius:50%}
+.lateral .marque b{font-size:16px;color:#fff}
+.lateral .marque small{color:rgba(255,255,255,.6)}
+.lateral a{display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:12px;color:rgba(255,255,255,.72);font-size:15.5px;text-decoration:none}
+.lateral a svg{color:rgba(255,255,255,.55);flex:none}
+.lateral a.on{background:rgba(233,165,58,.15);color:var(--or);font-weight:700}
+.lateral a.on svg{color:var(--or)}
+.lateral .bas{margin-top:auto;background:rgba(255,255,255,.06);border-radius:14px;padding:14px;font-size:13.5px;color:rgba(255,255,255,.72);line-height:1.45}
+.lateral .bas b{color:#fff;display:block;margin-bottom:4px}
+.principal{padding:30px 36px}
+.d-tete{display:flex;justify-content:space-between;align-items:center}
+.d-tete h2{font-family:var(--display);font-weight:800;font-size:32px}
+.d-tete .ex{font-size:13px;font-weight:700;color:#7A5200;background:#FFF0C2;border-radius:999px;padding:5px 11px;margin-left:12px;vertical-align:middle;font-family:var(--texte)}
+.d-tete .outils{display:flex;gap:10px}
+.sel-mois{background:#fff;border-radius:12px;padding:11px 16px;font-size:14.5px;font-weight:600;box-shadow:0 0 0 1px var(--trait)}
+.kpis{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:16px;margin-top:24px}
+.kpi{background:#fff;border-radius:20px;padding:20px 22px;box-shadow:0 0 0 1px var(--trait)}
+.kpi small{font-size:14px;color:var(--gris);font-weight:600}
+.kpi b{display:block;font-family:var(--display);font-weight:800;font-size:32px;margin-top:8px;letter-spacing:-.3px}
+.kpi b small{font-size:16px;color:var(--gris)}
+.kpi .var{font-size:13.5px;font-weight:700;color:var(--vert);margin-top:4px}
+.kpi.grand{background:var(--bleu);color:#fff;box-shadow:none;position:relative;overflow:hidden}
+.kpi.grand small{color:rgba(255,255,255,.72)}
+.kpi.grand b{font-size:40px;color:#fff}
+.kpi.grand b small{color:var(--or)}
+.kpi.grand .var{color:var(--or-clair)}
+.kpi.grand:after{content:"";position:absolute;left:0;right:0;bottom:0;height:12px;background:var(--bande);background-size:40px 12px}
+.d-grille{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;margin-top:16px}
+.bloc{background:#fff;border-radius:20px;padding:22px 24px;box-shadow:0 0 0 1px var(--trait)}
+.bloc h3{font-family:var(--display);font-weight:700;font-size:20px;display:flex;justify-content:space-between;align-items:baseline}
+.bloc h3 span{font-family:var(--texte);font-size:13.5px;color:var(--gris);font-weight:600}
+.barres{margin-top:16px;display:flex;flex-direction:column;gap:12px}
+.barre{display:grid;grid-template-columns:140px 1fr 130px;align-items:center;gap:14px;font-size:14.5px}
+.barre .nom{display:flex;align-items:center;gap:9px;font-weight:600}
+.barre .nom i{width:12px;height:12px;border-radius:4px}
+.barre .piste{height:12px;border-radius:12px;background:#EDF0F5;overflow:hidden}
+.barre .piste span{display:block;height:100%;border-radius:12px;background:var(--bleu)}
+.barre .v{text-align:right;font-family:var(--display);font-weight:700;font-size:15.5px}
+.segments{display:flex;height:16px;border-radius:10px;overflow:hidden;margin-top:14px;gap:3px}
+.legende{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px;font-size:14px;color:var(--gris)}
+.legende i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px}
+.pays{margin-top:12px}
+.pays div{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #EEF1F6;font-size:15px}
+.pays div:last-child{border:0}
+.pays b{font-family:var(--display);font-size:16px}
+.pays .pc{color:var(--gris);font-size:13px;margin-left:8px}
+.evt{margin-top:18px;background:#FFF6E3;border-radius:16px;padding:16px}
+.evt b{font-family:var(--display);font-size:16.5px}
+.evt .jauge{height:10px;border-radius:10px;background:#F4E2BC;margin:10px 0 6px;overflow:hidden}
+.evt .jauge span{display:block;height:100%;width:62%;background:var(--or);border-radius:10px}
+.evt small{font-size:13.5px;color:var(--gris)}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:14.5px}
+th{text-align:left;font-size:13px;color:var(--gris);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--trait)}
+td{padding:11px 10px;border-bottom:1px solid #EEF1F6}
+td.m{font-family:var(--display);font-weight:700;font-size:15px;text-align:right}
+th.m{text-align:right}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600}
+.chip i{width:9px;height:9px;border-radius:3px}
+.ok{color:#14663E;font-weight:700;font-size:13px;background:#E8F6EE;border-radius:999px;padding:4px 10px}
+.pied{margin-top:70px;display:flex;justify-content:space-between;gap:20px;color:var(--gris);font-size:14.5px;border-top:1px solid #CDD5E2;padding-top:22px;line-height:1.5}
+
+@media (max-width:760px){
+  .presentation{padding:28px 16px 48px}
+  .pres-tete{flex-direction:column;align-items:flex-start;gap:16px;margin-bottom:20px}
+  .pres-tete .g img{width:64px;height:64px}
+  .pres-tete h1{font-size:30px}
+  .pres-tete h1 br{display:none}
+  .pres-tete p{font-size:16px}
+  .signature{text-align:left}
+  .planche{margin-top:40px}
+  .planche-titre{flex-wrap:wrap;gap:8px 12px}
+  .planche-titre h2{font-size:21px}
+  .agrandir{margin-left:0}
+  .flux{gap:36px;justify-content:center}
+  .pied{flex-direction:column;gap:8px}
+}
+</style>
+</head>
+<body>
+<div class="presentation">
+
+  <header class="pres-tete">
+    <div class="g">
+      <img data-logo src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Logo de l'Église AD Béthel de Dakar">
+      <div>
+        <h1>Un site et une page d'offrandes<br>pour l'Église AD Béthel de Dakar</h1>
+        <p>Proposition de maquette : la page d'accueil du nouveau site, la page d'offrandes, le don sur téléphone avec reçu automatique, et le tableau de suivi pour l'équipe des finances.</p>
+      </div>
+    </div>
+    <div class="signature"><strong>Travis Guibinga, E'Markete Agency</strong><br>Maquette de proposition, octobre 2026<br>Couleurs et logo repris de l'église</div>
+  </header>
+
+  <!-- 1 -->
+  <section class="planche" id="p1">
+    <div class="planche-titre"><span class="n">1</span><h2>Page d'accueil du nouveau site</h2><span>Ordinateur, 1440 px</span><a class="agrandir" href="page-accueil.jpg">Voir en grand</a></div>
+    <div class="cadre" data-w="1440"><div class="ecran site">
+      <nav class="nav">
+        <div class="marque"><img data-logo src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><div><b>Église AD Béthel<br>de Dakar</b></div></div>
+        <ul><li class="actif">Accueil</li><li>L'église</li><li>Cultes et directs</li><li>Agenda</li><li>Départements</li><li>Contact</li></ul>
+        <span class="btn btn-or"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.5 8.6 3.6 5 7 5c2 0 3.4 1.1 5 3 1.6-1.9 3-3 5-3 3.4 0 5.5 3.6 4.3 6.8C19.5 16.4 12 21 12 21z" fill="currentColor" stroke="none"/></svg> Faire une offrande</span>
+      </nav>
+      <div class="hero">
+        <div class="hero-texte">
+          <div class="surtitre">Assemblées de Dieu · Dieuppeul, Dakar</div>
+          <h1>Bienvenue à Béthel, la maison de Dieu.</h1>
+          <p class="chapo">Une église évangélique et pentecôtiste attachée à la Parole de Dieu. Rejoignez-nous au culte, sur place à Dieuppeul ou en direct, où que vous soyez.</p>
+          <div class="actions"><span class="btn btn-or"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M10 8.5v7l5.5-3.5z" fill="currentColor"/></svg> Suivre le culte en direct</span><span class="btn btn-ligne"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> Horaires des cultes</span></div>
+          <div class="moyens"><span class="l">Offrandes en ligne</span>
+            <span class="pastille"><i class="wave"></i>Wave</span><span class="pastille"><i class="om"></i>Orange Money</span><span class="pastille"><i class="yas"></i>Yas (Free Money)</span><span class="pastille"><i class="carte"></i>Carte bancaire</span>
+          </div>
+        </div>
+        <div class="hero-visuel">
+          <div class="vision"><small>VISION 2026</small><b>« Année de moisson abondante et de grande réalisation »</b></div>
+          <div class="direct">
+            <div class="img"><span class="badge"><i></i>EN DIRECT</span><span class="lect"><svg width="34" height="34" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="#1A3970"/></svg></span></div>
+            <div class="txt"><small>DIMANCHE · AD BÉTHEL DAKAR TV</small><b>Culte d'action de grâce</b><span>Suivez le culte en direct sur le site, sans quitter la page.</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="bande"></div>
+      <div class="suite">
+        <h2>Nos cultes</h2>
+        <p class="sous">Sur place à Dieuppeul 3 ou en direct sur le site et sur YouTube.</p>
+        <div class="cultes">
+          <div class="culte phare"><div class="jour">Dimanche</div><div class="h"><span>8 h</span><span>10 h</span><span>12 h</span></div><p>Trois cultes chaque dimanche, retransmis en direct.</p></div>
+          <div class="culte"><div class="jour">Mardi <span class="acompleter">horaire à compléter</span></div><p>Culte en semaine, retransmis en direct.</p></div>
+          <div class="culte"><div class="jour">Vendredi <span class="acompleter">horaire à compléter</span></div><p>Culte en semaine, retransmis en direct.</p></div>
+        </div>
+        <div class="duo-blocs">
+          <div class="message">
+            <div class="vign"><span class="lect" style="width:58px;height:58px;border-radius:50%;background:#fff;display:grid;place-items:center"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="#1A3970"/></svg></span></div>
+            <div><small>DERNIER MESSAGE</small><b>Quelques clés pour activer la faveur divine et accomplir de grandes réalisations</b><span>Pasteur Félix B. Ndiaye</span></div>
+          </div>
+          <div class="depts">
+            <h3>Départements</h3>
+            <div><b>Jeunesse (JAD Béthel)</b><span>Voir les activités</span></div>
+            <div><b>Action sociale</b><span>Voir les actions</span></div>
+            <div><b>Autres départements</b><span class="acompleter">à compléter</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="pied-site">
+        <div><b>Église AD Béthel de Dakar</b>Dieuppeul 3, n° 2751, Dakar<br>+221 33 825 70 85 · adbethel2@gmail.com</div>
+        <div><b>Nous suivre</b>Facebook · YouTube (AD BÉTHEL DAKAR TV) · Instagram</div>
+        <div><b>Donner</b>Wave, Orange Money, Yas, carte bancaire<br>Reçu envoyé automatiquement</div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- 2 -->
+  <section class="planche" id="p2">
+    <div class="planche-titre"><span class="n">2</span><h2>Page d'offrandes</h2><span>Ordinateur, 1440 px</span><a class="agrandir" href="page-offrandes.jpg">Voir en grand</a></div>
+    <div class="cadre" data-w="1440"><div class="ecran site">
+      <nav class="nav">
+        <div class="marque"><img data-logo src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><div><b>Église AD Béthel<br>de Dakar</b></div></div>
+        <ul><li>Accueil</li><li>L'église</li><li>Cultes et directs</li><li>Agenda</li><li>Départements</li><li class="actif">Offrandes</li></ul>
+        <span class="btn btn-or"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.5 8.6 3.6 5 7 5c2 0 3.4 1.1 5 3 1.6-1.9 3-3 5-3 3.4 0 5.5 3.6 4.3 6.8C19.5 16.4 12 21 12 21z" fill="currentColor" stroke="none"/></svg> Faire une offrande</span>
+      </nav>
+      <div class="hero">
+        <div class="hero-texte">
+          <div class="surtitre">Dîmes et offrandes</div>
+          <h1>Donnez en moins d'une minute.</h1>
+          <p class="chapo">Pendant le culte, depuis Dakar ou depuis l'étranger : choisissez l'objet de votre don, payez avec Wave, Orange Money, Yas ou votre carte, et recevez aussitôt votre reçu sur WhatsApp.</p>
+          <div class="actions"><span class="btn btn-or"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.5 8.6 3.6 5 7 5c2 0 3.4 1.1 5 3 1.6-1.9 3-3 5-3 3.4 0 5.5 3.6 4.3 6.8C19.5 16.4 12 21 12 21z" fill="currentColor" stroke="none"/></svg> Faire une offrande</span><span class="btn btn-ligne"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v6a8 8 0 0 0 16 0V4"/><path d="M8 12l3 3 5-6"/></svg> Donner chaque mois</span></div>
+          <div class="moyens"><span class="l">Paiement accepté</span>
+            <span class="pastille"><i class="wave"></i>Wave</span><span class="pastille"><i class="om"></i>Orange Money</span><span class="pastille"><i class="yas"></i>Yas (Free Money)</span><span class="pastille"><i class="carte"></i>Carte bancaire</span>
+          </div>
+        </div>
+        <div class="hero-visuel">
+          <div class="toast"><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.3 8.7A10.2 10.2 0 0 0 7 21l-1.4 5.2 5.3-1.4a10.2 10.2 0 0 0 4.9 1.2 10.2 10.2 0 0 0 7.5-17.3zm-7.5 15.7c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.2.8.9-3.1-.2-.3a8.5 8.5 0 1 1 7.1 4zm4.6-6.4c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.6.1a7 7 0 0 1-3.5-3c-.3-.5.3-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg></div><div><b>Reçu envoyé sur WhatsApp</b><span>Dîme d'octobre, 25 000 F CFA, payée avec Wave</span></div></div>
+          <div class="tel" id="tel-hero"></div>
+        </div>
+      </div>
+      <div class="bande"></div>
+      <div class="suite">
+        <h2>Où va votre don</h2>
+        <p class="sous">Chaque don est rattaché à son objet, et vous recevez un reçu à votre nom.</p>
+        <div class="objets">
+          <div class="objet">
+            <div class="ico"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4M10 4h4"/><path d="M5 21V11l7-5 7 5v10"/><path d="M10 21v-5h4v5"/><path d="M3 21h18"/></svg></div>
+            <h3>Dîme et offrandes</h3>
+            <p>Pour la vie de l'église et de ses départements, chaque dimanche ou quand vous le souhaitez.</p>
+            <span class="lien">Donner pour l'église</span>
+          </div>
+          <div class="objet phare">
+            <div class="ico"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V9h6v12"/><path d="M13 21V4h6v17"/><path d="M8 12v2M16 7v2M16 12v2M16 17v1"/></svg></div>
+            <h3>Grandes réalisations 2026</h3>
+            <p>Soutenez les projets de l'année de moisson abondante et de grande réalisation, et suivez l'avancement de la collecte.</p>
+            <div class="jauge-o"><div class="j"><span></span></div><small>Exemple de jauge : objectif et montant fixés par l'église</small></div>
+            <span class="lien">Soutenir le projet</span>
+          </div>
+          <div class="objet">
+            <div class="ico"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.5c-1.2-1.5-4-1.7-4.8.4-.7 1.9 1.2 3.6 4.8 6.1 3.6-2.5 5.5-4.2 4.8-6.1-.8-2.1-3.6-1.9-4.8-.4z"/><path d="M3 18l3-1.5c1-.5 2-.5 3 0l2 1h4a1.5 1.5 0 0 0 0-3h-3"/><path d="M15 16.5l4.2-2a1.6 1.6 0 0 1 1.8 2.6L16 21H8"/></svg></div>
+            <h3>Action sociale</h3>
+            <p>Pour les actions du ministère de l'action sociale auprès des familles et des personnes dans le besoin.</p>
+            <span class="lien">Donner pour l'action sociale</span>
+          </div>
+        </div>
+        <div class="rdv">
+          <div class="q"><div class="date"><b>Dim.</b><small>3 cultes</small></div><div><h4>Cultes du dimanche à 8 h, 10 h et 12 h</h4><p>À Dieuppeul 3 et en direct sur AD BÉTHEL DAKAR TV. Le lien de don s'affiche sous chaque direct.</p></div></div>
+          <span class="btn btn-bleu"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M10 8.5v7l5.5-3.5z" fill="currentColor"/></svg> Suivre en direct</span>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- 3 -->
+  <section class="planche" id="p3">
+    <div class="planche-titre"><span class="n">3</span><h2>Le don sur téléphone, en trois écrans</h2><span>Mobile, 390 px</span></div>
+    <div class="flux">
+      <figure>
+        <div class="cadre" data-w="390"><div class="tel" id="tel1">
+          <div class="ecr">
+            <div class="encoche"></div>
+            <div class="statut"><span>9:41</span><span>4G</span></div>
+            <div class="app-tete"><div class="rond"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></div><h3>Faire une offrande</h3><div class="rond" style="visibility:hidden"></div></div>
+            <div class="etapes"><i class="ok"></i><i></i><i></i></div>
+            <div class="corps">
+              <div class="lab">Pour quoi donnez-vous ?</div>
+              <div class="objets-m">
+                <div class="choix sel"><span class="pt"></span><div><b>Dîme</b><small>Église AD Béthel de Dakar</small></div></div>
+                <div class="choix"><span class="pt"></span><div><b>Offrande</b><small>Culte, action de grâce</small></div></div>
+                <div class="choix"><span class="pt"></span><div><b>Grandes réalisations</b><small>Projets 2026</small></div><span class="tag">Campagne</span></div>
+                <div class="choix"><span class="pt"></span><div><b>Action sociale</b><small>Familles dans le besoin</small></div></div>
+              </div>
+              <div class="lab">Montant</div>
+              <div class="montant">
+                <div class="devises"><span class="on">F CFA</span><span>Euro</span></div>
+                <div class="val">25 000<small>F CFA</small></div>
+                <div class="eq">Environ 38 € pour la diaspora</div>
+                <div class="puces"><span>5 000</span><span>10 000</span><span class="on">25 000</span><span>Autre</span></div>
+              </div>
+              <div class="cta-m"><span class="btn btn-or">Continuer</span></div>
+            </div>
+          </div>
+        </div></div>
+        <figcaption><b>Choisir l'objet et le montant.</b> En francs CFA ou en euros pour la diaspora, avec des montants proposés pour aller vite.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="cadre" data-w="390"><div class="tel">
+          <div class="ecr">
+            <div class="encoche"></div>
+            <div class="statut"><span>9:41</span><span>4G</span></div>
+            <div class="app-tete"><div class="rond"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></div><h3>Moyen de paiement</h3><div class="rond" style="visibility:hidden"></div></div>
+            <div class="etapes"><i class="ok"></i><i class="ok"></i><i></i></div>
+            <div class="corps">
+              <div class="resume"><div><small>Dîme · Église AD Béthel</small><b>25 000 F CFA</b></div><a>Modifier</a></div>
+              <div class="lab">Payer avec</div>
+              <div class="grille-moyens">
+                <div class="moy sel"><span class="logo" style="background:#1DC8F2">Wave</span><b>Wave</b><small>Sénégal</small></div>
+                <div class="moy"><span class="logo" style="background:#FF7900">OM</span><b>Orange Money</b><small>Sénégal</small></div>
+                <div class="moy"><span class="logo" style="background:#7A2FB6">Yas</span><b>Yas</b><small>Free Money</small></div>
+                <div class="moy"><span class="logo" style="background:#3A3F4A">CB</span><b>Carte bancaire</b><small>Diaspora</small></div>
+              </div>
+              <div class="lab">Votre numéro Wave</div>
+              <div class="champ"><span class="ind">+221</span>77 000 00 00</div>
+              <div class="aide"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span>Vous validez le paiement dans votre application Wave. Personne d'autre que vous ne voit votre code.</span></div>
+              <div class="cta-m"><span class="btn btn-or">Payer 25 000 F CFA</span><div class="securite"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> Paiement sécurisé, versé directement à l'église</div></div>
+            </div>
+          </div>
+        </div></div>
+        <figcaption><b>Choisir son moyen de paiement.</b> Wave, Orange Money et Yas pour le Sénégal, la carte bancaire pour la diaspora. Plus de numéro à recopier.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="cadre" data-w="390"><div class="tel">
+          <div class="ecr">
+            <div class="encoche"></div>
+            <div class="statut"><span>9:42</span><span>4G</span></div>
+            <div class="etapes" style="padding-top:12px"><i class="ok"></i><i class="ok"></i><i class="ok"></i></div>
+            <div class="corps merci">
+              <div class="sceau-ok"><svg width="40" height="40" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <h3>Merci, Fatou.<br>Votre dîme est reçue.</h3>
+              <p class="m">Que Dieu vous bénisse. Votre reçu vient d'être envoyé sur WhatsApp.</p>
+              <div class="recu">
+                <div class="bande"></div>
+                <div class="entete"><div class="re-g"><img data-logo src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><div><b>Église AD Béthel<br>de Dakar</b></div></div><span>Reçu n°<br>BTH-1026-0418</span></div>
+                <div class="lignes">
+                  <div><span>Objet</span><b>Dîme</b></div>
+                  <div><span>Payé avec</span><b>Wave</b></div>
+                  <div><span>Date</span><b>25 oct. 2026, 9:42</b></div>
+                  <div class="tot"><span>Montant</span><b>25 000 F CFA</b></div>
+                </div>
+              </div>
+              <div class="envoye"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#25D366"/><path fill="#fff" d="M23.3 8.7A10.2 10.2 0 0 0 7 21l-1.4 5.2 5.3-1.4a10.2 10.2 0 0 0 4.9 1.2 10.2 10.2 0 0 0 7.5-17.3zm-7.5 15.7c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.2.8.9-3.1-.2-.3a8.5 8.5 0 1 1 7.1 4zm4.6-6.4c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.6.1a7 7 0 0 1-3.5-3c-.3-.5.3-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg> Reçu envoyé sur WhatsApp</div>
+              <p class="verset">« Que chacun donne comme il l'a résolu en son cœur… car Dieu aime celui qui donne avec joie. » 2 Corinthiens 9:7</p>
+              <div class="duo"><span class="btn btn-clair">Télécharger le reçu</span><span class="btn btn-bleu">Retour au direct</span></div>
+            </div>
+          </div>
+        </div></div>
+        <figcaption><b>Le reçu arrive tout seul.</b> Le fidèle reçoit son reçu sur WhatsApp, et le don apparaît aussitôt dans le tableau de suivi de l'église.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="planche" id="p4">
+    <div class="planche-titre"><span class="n">4</span><h2>Le suivi pour l'équipe des finances</h2><span>Ordinateur, 1440 px</span><a class="agrandir" href="tableau-de-suivi.jpg">Voir en grand</a></div>
+    <div class="cadre" data-w="1440"><div class="ecran dash">
+      <aside class="lateral">
+        <div class="marque"><img data-logo src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><div><b>AD Béthel</b><small>Espace finances</small></div></div>
+        <a class="on"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg> Tableau de bord</a>
+        <a><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg> Tous les dons</a>
+        <a><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V9h6v12"/><path d="M13 21V4h6v17"/></svg> Campagnes</a>
+        <a><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg> Reçus</a>
+        <a><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg> Exports</a>
+        <div class="bas"><b>Rapprochement automatique</b>Chaque don Wave, Orange Money, Yas ou carte est enregistré avec son objet et son reçu. Plus rien à pointer à la main.</div>
+      </aside>
+      <div class="principal">
+        <div class="d-tete"><h2>Octobre 2026 <span class="ex">Données d'exemple</span></h2><div class="outils"><span class="sel-mois">Ce mois-ci</span><span class="btn btn-bleu" style="padding:11px 18px;font-size:14.5px"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg> Exporter</span></div></div>
+        <div class="kpis">
+          <div class="kpi grand"><small>Total reçu ce mois-ci</small><b>4 860 000 <small>F CFA</small></b><div class="var">+12 % par rapport à septembre</div></div>
+          <div class="kpi"><small>Nombre de dons</small><b>612</b><div class="var">+48 ce mois-ci</div></div>
+          <div class="kpi"><small>Donateurs</small><b>287</b><div class="var">dont 41 de la diaspora</div></div>
+          <div class="kpi"><small>Reçus envoyés</small><b>612</b><div class="var">100 % automatiques</div></div>
+        </div>
+        <div class="d-grille">
+          <div class="bloc">
+            <h3>Par moyen de paiement <span>en F CFA</span></h3>
+            <div class="barres">
+              <div class="barre"><span class="nom"><i style="background:#1DC8F2"></i>Wave</span><span class="piste"><span style="width:100%;background:#1DC8F2"></span></span><span class="v">2 430 000</span></div>
+              <div class="barre"><span class="nom"><i style="background:#FF7900"></i>Orange Money</span><span class="piste"><span style="width:58%;background:#FF7900"></span></span><span class="v">1 410 000</span></div>
+              <div class="barre"><span class="nom"><i style="background:#7A2FB6"></i>Yas</span><span class="piste"><span style="width:22%;background:#7A2FB6"></span></span><span class="v">535 000</span></div>
+              <div class="barre"><span class="nom"><i style="background:#3A3F4A"></i>Carte</span><span class="piste"><span style="width:20%;background:#3A3F4A"></span></span><span class="v">485 000</span></div>
+            </div>
+            <h3 style="margin-top:26px">Par objet</h3>
+            <div class="segments"><span style="width:46%;background:var(--bleu)"></span><span style="width:28%;background:#5C80C4"></span><span style="width:18%;background:var(--or)"></span><span style="width:8%;background:#9FB2D6"></span></div>
+            <div class="legende"><span><i style="background:var(--bleu)"></i>Dîmes 46 %</span><span><i style="background:#5C80C4"></i>Offrandes 28 %</span><span><i style="background:var(--or)"></i>Grandes réalisations 18 %</span><span><i style="background:#9FB2D6"></i>Action sociale 8 %</span></div>
+          </div>
+          <div class="bloc">
+            <h3>D'où viennent les dons</h3>
+            <div class="pays">
+              <div><span>Dakar</span><span><b>3 640 000</b><span class="pc">75 %</span></span></div>
+              <div><span>Reste du Sénégal</span><span><b>530 000</b><span class="pc">11 %</span></span></div>
+              <div><span>France</span><span><b>390 000</b><span class="pc">8 %</span></span></div>
+              <div><span>Italie et Espagne</span><span><b>190 000</b><span class="pc">4 %</span></span></div>
+              <div><span>Autres pays</span><span><b>110 000</b><span class="pc">2 %</span></span></div>
+            </div>
+            <div class="evt"><b>Grandes réalisations 2026</b><div class="jauge"><span></span></div><small>62 % de l'objectif (exemple), 214 donateurs</small></div>
+          </div>
+        </div>
+        <div class="bloc" style="margin-top:16px">
+          <h3>Derniers dons <span>mis à jour en temps réel</span></h3>
+          <table>
+            <tr><th>Donateur</th><th>Objet</th><th>Moyen</th><th>Date</th><th>Reçu</th><th class="m">Montant</th></tr>
+            <tr><td>Fatou D.</td><td>Dîme</td><td><span class="chip"><i style="background:#1DC8F2"></i>Wave</span></td><td>25 oct., 9:42</td><td><span class="ok">Envoyé</span></td><td class="m">25 000 F</td></tr>
+            <tr><td>Jean-Paul M.</td><td>Grandes réalisations</td><td><span class="chip"><i style="background:#3A3F4A"></i>Carte</span></td><td>25 oct., 9:37</td><td><span class="ok">Envoyé</span></td><td class="m">100 000 F</td></tr>
+            <tr><td>Aïssatou N.</td><td>Offrande</td><td><span class="chip"><i style="background:#FF7900"></i>Orange Money</span></td><td>25 oct., 9:31</td><td><span class="ok">Envoyé</span></td><td class="m">5 000 F</td></tr>
+            <tr><td>Samuel K.</td><td>Dîme</td><td><span class="chip"><i style="background:#7A2FB6"></i>Yas</span></td><td>25 oct., 9:20</td><td><span class="ok">Envoyé</span></td><td class="m">40 000 F</td></tr>
+            <tr><td>Marie-Claire S.</td><td>Action sociale</td><td><span class="chip"><i style="background:#1DC8F2"></i>Wave</span></td><td>25 oct., 9:12</td><td><span class="ok">Envoyé</span></td><td class="m">10 000 F</td></tr>
+          </table>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <footer class="pied">
+    <span>Maquette de proposition pour l'Église AD Béthel de Dakar, réalisée par E'Markete Agency. Les chiffres et les noms affichés sont des exemples. Horaires et contenus à valider avec l'église.</span>
+    <span style="white-space:nowrap">Travis Guibinga · emarketeagency.com</span>
+  </footer>
+</div>
+<script>
+  var L="data:image/png;base64,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";document.querySelectorAll("img[data-logo]").forEach(function(i){i.src=L});
+  document.getElementById('tel-hero').innerHTML = document.getElementById('tel1').innerHTML;
+</script>
+<script>
+(function(){
+  function ajuster(){
+    document.querySelectorAll('.cadre').forEach(function(c){
+      var w=+c.dataset.w, el=c.firstElementChild;
+      var k=Math.min(1,c.clientWidth/w);
+      el.style.transform=k<1?'scale('+k+')':'';
+      c.style.height=(el.offsetHeight*k)+'px';
+    });
+  }
+  window.addEventListener('resize',ajuster);
+  window.addEventListener('load',ajuster);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(ajuster);
+  ajuster();
+})();
+</script>
+</body>
+</html>
